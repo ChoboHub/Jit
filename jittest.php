@@ -62,7 +62,7 @@
        echo " width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
 
         // 3. Validate the dimension
-        if ($testUrl['w'] <= 0 || $testUrl['h'] <= 0  || $testUrl['w'] != $width && $testUrl['type'] == 4 || $testUrl['h'] != $height && $testUrl['type'] == 4) {
+        if ($testUrl['w'] <= 0 || $testUrl['h'] <= 0  || $testUrl['w'] != $width || $testUrl['h'] != $height ) {
              throw new Exception('Dimensons are not identical'); 
         }
 
