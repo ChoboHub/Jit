@@ -17,11 +17,13 @@
     {
         $handle = fopen("workspace/uploads/jit_images.txt", "r");
         while ($line = fgetcsv($handle)) {
+            if ($line[0]{0} === '#') {
+                continue;
+            }
             $array[] = array(
                 'w' => @$line[1],
                 'h' => @$line[2],
-                'type' => @$line[3],
-                'ratio' => @$line[4],
+                'ratio' => @$line[3],
                 'url' => $line[0],
             );
         }
