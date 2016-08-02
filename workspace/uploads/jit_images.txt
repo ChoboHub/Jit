@@ -96,7 +96,6 @@ http://localhost/sym/image/3/850/1150/2/FF0000/uploads/bobo.jpg,850,1150,#FF0000
 http://localhost/sym/image/3/850/1150/3/FF0000/uploads/bobo.jpg,850,1150,#FF000000
 http://localhost/sym/image/3/850/1150/6/FF0000/uploads/bobo.jpg,850,1150,#FF000000
 http://localhost/sym/image/3/850/1150/3/FF0000/uploads/bobo.jpg,850,1150,#FF000000
-#
 http://localhost/sym/image/3/850/0/3/FF0000/uploads/bobo.jpg,850,531,#FF000000
 http://localhost/sym/image/3/2000/950/1/FF0000/uploads/bobo.jpg,2000,950,#FF000000
 http://localhost/sym/image/3/2000/950/2/FF0000/uploads/bobo.jpg,2000,950,#FF000000
@@ -174,7 +173,6 @@ http://localhost/sym/image/2/500/500/7/FF0000/1/https://2013.deuxhuithuit.com/wo
 http://localhost/sym/image/2/500/500/2/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
 http://localhost/sym/image/2/500/500/3/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
 http://localhost/sym/image/2/500/500/5/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
-http://localhost/sym/image/2/500/500/6/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
 #2115.879 (round 2116)
 http://localhost/sym/image/2/0/500/6/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,2116,500,#FF000000
 http://localhost/sym/image/2/500/500/8/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
@@ -218,7 +216,7 @@ http://localhost/sym/image/2/2000/850/6/FF0000/1/https://2013.deuxhuithuit.com/w
 http://localhost/sym/image/2/2000/850/7/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,2000,850,#FF000000
 http://localhost/sym/image/2/2000/850/8/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,2000,850,#FF000000
 http://localhost/sym/image/2/2000/850/9/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,2000,850,#FF000000
-#le background color fonctionne mal avec le parametre 3
+#le background color fonctionne bien avec le parametre 3
 http://localhost/sym/image/3/500/500/1/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
 http://localhost/sym/image/3/500/500/2/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
 http://localhost/sym/image/3/500/500/3/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,500,500,#FF000000
@@ -240,7 +238,6 @@ http://localhost/sym/image/3/850/1150/1/FF0000/1/https://2013.deuxhuithuit.com/w
 http://localhost/sym/image/3/850/1150/2/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,850,1150,#FF000000
 http://localhost/sym/image/3/850/1150/3/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,850,1150,#FF000000
 http://localhost/sym/image/3/850/1150/6/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,850,1150,#FF000000
-http://localhost/sym/image/3/850/1150/3/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,850,1150,#FF000000
 #212.677 (round to 213)
 http://localhost/sym/image/3/900/0/3/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,900,213,#FF000000
 http://localhost/sym/image/3/2000/950/1/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,2000,950,#FF000000
