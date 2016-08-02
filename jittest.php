@@ -14,11 +14,12 @@
     $endUrl =  'https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png';
 
     $cpt = 0;
-    $cpt_ligne = 0;
     function createUrl()
     {
         $handle = fopen("workspace/uploads/jit_images.txt", "r");
+        $l = 0;
         while ($line = fgetcsv($handle)) {
+            $l++;
             if ($line[0]{0} === '#') {
                 continue;
             }
@@ -27,6 +28,7 @@
                 'h' => @$line[2],
                 'bg' => @$line[3],
                 'url' => $line[0],
+                'l' => $l,
             );
         }
         return $array;
@@ -35,9 +37,8 @@
     $testUrls = createUrl();
 
     foreach ($testUrls as $testUrl) {
-       $cpt_ligne++;
         try {
-            if (!testOneUrl($testUrl, $cpt_ligne)) {
+            if (!testOneUrl($testUrl)) {
                 throw new Exception('Test did not return true');
             }
             echo 'Test succeeded!' . _EOL;
@@ -49,7 +50,7 @@
 
     echo _EOL . 'Executed ' . count($testUrls) . ' tests, test succeeded : ' . $cpt . '.' . _EOL . _EOL;
 
-    function testOneUrl(array $testUrl, $cpt)
+    function testOneUrl(array $testUrl)
     {
         // 1. Request the image from server
         $image = fetchImage($testUrl['url']);
@@ -73,7 +74,7 @@
         $opacity = $color['alpha'];
         $rgba = $red . $green . $blue . $opacity;
 
-        echo  "Ligne : " . $cpt . " -> width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
+        echo  "Ligne : " .  $testUrl['l'] . " -> width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
 
         // 3. Validate the dimension
         if ($testUrl['w'] <= 0 || $testUrl['h'] <= 0  || $testUrl['w'] != $width || $testUrl['h'] != $height ) {
