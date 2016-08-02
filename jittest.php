@@ -13,6 +13,7 @@
     $startUrl = 'http://localhost/sym/image/';
     $endUrl =  'https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png';
 
+    $cpt = 0;
     function createUrl()
     {
         $handle = fopen("workspace/uploads/jit_images.txt", "r");
@@ -38,12 +39,13 @@
                 throw new Exception('Test did not return true');
             }
             echo 'Test succeeded!' . _EOL;
+            $cpt++;
         } catch (Exception $ex) {
             echo 'Erreur! ' . $ex->getMessage() . _EOL;
         }
     }
 
-    echo _EOL . 'Executed ' . count($testUrls) . ' tests.' . _EOL . _EOL;
+    echo _EOL . 'Executed ' . count($testUrls) . ' tests, test succeeded : ' . $cpt . '.' . _EOL . _EOL;
 
     function testOneUrl(array $testUrl)
     {
