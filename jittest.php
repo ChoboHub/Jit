@@ -14,6 +14,7 @@
     $endUrl =  'https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png';
 
     $cpt = 0;
+    $cpt_ligne = 0;
     function createUrl()
     {
         $handle = fopen("workspace/uploads/jit_images.txt", "r");
@@ -34,8 +35,9 @@
     $testUrls = createUrl();
 
     foreach ($testUrls as $testUrl) {
+       $cpt_ligne++;
         try {
-            if (!testOneUrl($testUrl)) {
+            if (!testOneUrl($testUrl, $cpt_ligne)) {
                 throw new Exception('Test did not return true');
             }
             echo 'Test succeeded!' . _EOL;
@@ -47,7 +49,7 @@
 
     echo _EOL . 'Executed ' . count($testUrls) . ' tests, test succeeded : ' . $cpt . '.' . _EOL . _EOL;
 
-    function testOneUrl(array $testUrl)
+    function testOneUrl(array $testUrl, $cpt)
     {
         // 1. Request the image from server
         $image = fetchImage($testUrl['url']);
@@ -71,7 +73,7 @@
         $opacity = $color['alpha'];
         $rgba = $red . $green . $blue . $opacity;
 
-        echo " width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
+        echo  "Ligne : " . $cpt . " -> width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
 
         // 3. Validate the dimension
         if ($testUrl['w'] <= 0 || $testUrl['h'] <= 0  || $testUrl['w'] != $width || $testUrl['h'] != $height ) {
@@ -82,13 +84,15 @@
         if (!empty($testUrl['bg'])) {
             if ($color){
                 list($r, $g, $b, $a) = sscanf($testUrl['bg'], "#%02x%02x%02x%02x");
+                //echo "{$testUrl['bg']} -> $r $g $b $a", _EOL;
                 $rgbaUrl = $r . $g . $b . $a;
                 if ($rgba != $rgbaUrl) {
+                    echo $rgbaUrl . " " . $rgba;
+                    print_r($color);
                     throw new Exception('Background image not the same'); 
                 }
             }
         }
-
         return true;
     }
 
