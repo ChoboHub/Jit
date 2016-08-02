@@ -24,7 +24,7 @@
             $array[] = array(
                 'w' => @$line[1],
                 'h' => @$line[2],
-                'ratio' => @$line[3],
+                'bg' => @$line[3],
                 'url' => $line[0],
             );
         }
@@ -61,16 +61,33 @@
         $width = imagesx($imgObj);
         $height = imagesy($imgObj);
 
-       echo " width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
+        // RGBA for the server image
+        $imgBg = imagecolorat($imgObj, 0, 0);
+        $color = imagecolorsforindex($imgObj, $imgBg);
+
+        $red = $color['red'];
+        $green = $color['green'];
+        $blue = $color['blue'];
+        $opacity = $color['alpha'];
+        $rgba = $red . $green . $blue . $opacity;
+
+        echo " width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
 
         // 3. Validate the dimension
         if ($testUrl['w'] <= 0 || $testUrl['h'] <= 0  || $testUrl['w'] != $width || $testUrl['h'] != $height ) {
              throw new Exception('Dimensons are not identical'); 
         }
 
-        // 4.
-
-
+        // 4. optional background color test
+        if (!empty($testUrl['bg'])) {
+            if ($color){
+                list($r, $g, $b, $a) = sscanf($testUrl['bg'], "#%02x%02x%02x%02x");
+                $rgbaUrl = $r . $g . $b . $a;
+                if ($rgba != $rgbaUrl) {
+                    throw new Exception('Background image not the same'); 
+                }
+            }
+        }
 
         return true;
     }
