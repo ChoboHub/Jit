@@ -181,7 +181,6 @@ http://localhost/sym/image/2/750/750/1/FF0000/1/https://2013.deuxhuithuit.com/wo
 http://localhost/sym/image/2/750/750/4/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
 http://localhost/sym/image/2/750/750/7/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
 http://localhost/sym/image/2/750/750/2/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
-http://localhost/sym/image/2/750/750/2/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
 http://localhost/sym/image/2/750/750/3/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
 http://localhost/sym/image/2/750/750/5/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
 http://localhost/sym/image/2/750/750/6/FF0000/1/https://2013.deuxhuithuit.com/workspace/assets/img/logo288-accueil-black.png,750,750,#FF000000
