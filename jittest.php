@@ -66,13 +66,22 @@
 
         // RGBA for the server image
         $imgBg = imagecolorat($imgObj, 0, 0);
-        $color = imagecolorsforindex($imgObj, $imgBg);
+
+        if (imageistruecolor($imgObj)) {
+            $color = [
+                'red' => ($imgBg >> 16) & 0xFF,
+                'green' => ($imgBg >> 8) & 0xFF,
+                'blue' => $imgBg & 0xFF,
+                'alpha' => ($imgBg & 0x7F000000) >> 24,
+            ];
+        } else {
+            $color = imagecolorsforindex($imgObj, $imgBg);
+        }
 
         $red = $color['red'];
         $green = $color['green'];
         $blue = $color['blue'];
         $opacity = $color['alpha'];
-        $rgba = $red . $green . $blue . $opacity;
 
         echo  "Ligne : " .  $testUrl['l'] . " -> width : ", $testUrl['w'], ' ', $width, " height : ", $testUrl['h'] ,  ' ', $height, _EOL;
 
@@ -84,12 +93,14 @@
         // 4. optional background color test
         if (!empty($testUrl['bg'])) {
             if ($color){
+                var_dump($imgBg, $color);die;
                 list($r, $g, $b, $a) = sscanf($testUrl['bg'], "#%02x%02x%02x%02x");
-                //echo "{$testUrl['bg']} -> $r $g $b $a", _EOL;
-                $rgbaUrl = $r . $g . $b . $a;
-                if ($rgba != $rgbaUrl) {
-                    echo $rgbaUrl . " " . $rgba;
-                    print_r($color);
+
+                echo $r, ' ', $g, ' ', $b, ' ', $a, ' ', _EOL;
+                echo $red, ' ', $green, ' ', $blue, ' ', $opacity, ' ', _EOL;
+
+                if ($red != $r || $green != $g || $blue != $b || $opacity != $a ) {
+                    
                     throw new Exception('Background image not the same'); 
                 }
             }
